@@ -16,6 +16,8 @@ Given an integer array `nums`, return `true` if any value appears at least twice
 - **Approach:** Use a HashSet to track seen elements and detect duplicates quickly.
 
 
+_______________________________________________________________________________________________________________________________________________
+
 2.Longest Subarray with Sum K
 ###Problem:
   Given an array of integers and a target sum 'k', find the length of the longest contiguous subarray
@@ -45,3 +47,22 @@ Given an integer array `nums`, return `true` if any value appears at least twice
   - Array contains negative numbers.
   - Multiple subarrays with the same target sum.
   - Entire array itself equals k.
+_______________________________________________________________________________________________________________________________________________
+3. Spiral Matrix Traversal
+
+### Problem Statement
+
+Given a 2D matrix `mat`, return all elements in **spiral order** (clockwise starting from the top-left).
+
+### Approach
+
+Use four boundary pointers (`top`, `bottom`, `left`, `right`) to simulate the spiral traversal of the matrix. Move in a loop through the boundaries, adding elements to the result list in spiral order, and update the boundaries after each traversal.
+
+### Time Complexity
+
+- **O(m × n)**, where `m` is the number of rows and `n` is the number of columns.
+
+### Space Complexity
+
+- **O(1)** (excluding the result list).
+

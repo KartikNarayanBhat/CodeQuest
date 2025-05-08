@@ -1,0 +1,36 @@
+class Solution 
+    public ArrayList<Integer> spirallyTraverse(int mat[][]) {
+        ArrayList<Integer> ans=new ArrayList<>();
+        if(mat.length==0){
+            return ans;
+        }
+        int rb=0;
+        int re=mat.length-1;
+        int cb=0;
+        int ce=mat[0].length-1;
+        while(rb<=re&&cb<=ce){
+            for(int i=cb;i<=ce;i++){
+                ans.add(mat[rb][i]);
+            }
+            rb++;
+            for(int i=rb;i<=re;i++){
+            ans.add(mat[i][ce]);    
+            }
+            ce--;
+            if(rb<=re){
+                for(int i=ce;i>=cb;i--){
+                    ans.add(mat[re][i]);
+                }
+            }
+                re--;
+            if(cb<=ce){
+                for(int i=re;i>=rb;i--){
+                    ans.add(mat[i][cb]);
+                }
+            }
+                cb++;
+            }
+        
+        return ans;
+    }
+}

@@ -1,0 +1,15 @@
+class Solution {
+    public int getSingle(int[] arr) {
+        int one=0;
+        int two=0;
+        int mask=0;
+        for(int a:arr){
+            two|=one&a;
+            one^=a;
+            mask=~(one&two);
+            one&=mask;
+            two&=mask;
+        }
+        return one;
+    }
+}

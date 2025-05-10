@@ -19,3 +19,28 @@ This method works without using extra memory for a frequency map or array.
 #Time and Space Complexity
 - **Time Complexity:** O(n) — single pass through the array.
 - **Space Complexity:** O(1) — constant space used for bit tracking.
+
+
+________________________________________________________________________________________________________________________________________________
+2.Set Bits in an Integer
+
+#Problem Statement
+Given a positive integer n, the task is to count the number of set bits (1s) in its binary representation.
+For example,
+
+n = 5 → binary = 101 → Output: 2
+
+n = 7 → binary = 111 → Output: 3
+
+#Approach
+We use bitwise operations to count the number of 1s in the binary form of n:
+Use n & 1 to check the last bit.
+If it’s 1, increment the count.
+Right shift n using n >>= 1 to move to the next bit.
+Repeat until n becomes 0.
+
+#Time and Space Complexity
+Time Complexity: O(log n)
+We check each bit, and there are log₂(n) bits in a number.
+Space Complexity: O(1)
+Only a few variables are used regardless of input size.

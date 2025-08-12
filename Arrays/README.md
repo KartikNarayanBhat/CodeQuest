@@ -1,15 +1,15 @@
-# Contains Duplicate Leet Code 217
+# 1.Contains Duplicate Leet Code 217
 
-Problem
+## Problem
 Given an integer array `nums`, return `true` if any value appears at least twice in the array, and `false` if every element is distinct.
 Solutions
  
- Method 1: Sorting
+ ## Method 1: Sorting
 - **Time Complexity:** O(n log n)
 - **Space Complexity:** O(1)
 - **Approach:** Sort the array and check for adjacent duplicates.
 
- Method 2: HashSet
+ ## Method 2: HashSet
 - **Time Complexity:** O(n)
 - **Space Complexity:** O(n)
 - **Approach:** Use a HashSet to track seen elements and detect duplicates quickly.
@@ -18,15 +18,15 @@ Solutions
 ____________________________________________________________________________________________________________________________________________________________________
 
 # 2.Longest Subarray with Sum K
-Problem:
+## Problem:
   Given an array of integers and a target sum 'k', find the length of the longest contiguous subarray
   that adds up exactly to 'k'.
   
-  Approach:
+ ## Approach:
   This solution uses the prefix sum technique along with a HashMap to store the first occurrence
   of each prefix sum value.
   
-  Steps:
+  ## Steps:
   1. Initialize a running sum = 0 and ans = 0.
   2. Traverse the array:
    - Add current element to sum.
@@ -35,39 +35,39 @@ Problem:
    - Update ans to the maximum of current ans and the subarray length.
    - Store the sum in the HashMap if it's not already there to preserve the earliest index.
   
-  Why This Works:
+ ## Why This Works:
   By using the prefix sum concept, we reduce the problem of checking all subarrays to a 
   constant-time lookup using a HashMap. This reduces time complexity from O(n^2) to O(n).
   
-  Time Complexity: O(n) - Single pass through the array.
-  Space Complexity: O(n) - For storing prefix sums in the HashMap.
+  -Time Complexity: O(n) - Single pass through the array.
+  -Space Complexity: O(n) - For storing prefix sums in the HashMap.
  
-  Edge Cases Handled:
+  ## Edge Cases Handled:
   - Array contains negative numbers.
   - Multiple subarrays with the same target sum.
   - Entire array itself equals k.
 ____________________________________________________________________________________________________________________________________________________________________
 # 3. Spiral Matrix Traversal
 
-Problem Statement
+## Problem Statement
 
 Given a 2D matrix `mat`, return all elements in **spiral order** (clockwise starting from the top-left).
 
- Approach
+ ## Approach
 
 Use four boundary pointers (`top`, `bottom`, `left`, `right`) to simulate the spiral traversal of the matrix. Move in a loop through the boundaries, adding elements to the result list in spiral order, and update the boundaries after each traversal.
 
- Time Complexity
+ ## Time Complexity
 
 - **O(m × n)**, where `m` is the number of rows and `n` is the number of columns.
 
- Space Complexity
+## Space Complexity
 
 - **O(1)** (excluding the result list).
 
 ____________________________________________________________________________________________________________________________________________________________________
 # 4.Valid Sudoku — Java Solution
-Problem Statement:  
+## Problem Statement:  
 Determine if a given  **9×9 Sudoku board**  is valid.  
 Only the  **filled cells**  need to be validated according to the rules:
 
@@ -79,6 +79,34 @@ iii.Each of the nine  **3×3 sub-boxes**  of the grid must contain the digits  `
 
 The Sudoku board  **may be partially filled**, where empty cells are represented by  `'.'`.
 
-Time Complexity: We check each of the 81 cells once → **O(9×9) = O(1) (constant for fixed 9×9 board, or **O(n^2)** generalized).**
+## Time Complexity: We check each of the 81 cells once → **O(9×9) = O(1) (constant for fixed 9×9 board, or **O(n^2)** generalized).**
 
-Space Complexity: **Three 9×9 arrays → O(1) constant space (or O(n^2) generalized).**
+## Space Complexity: **Three 9×9 arrays → O(1) constant space (or O(n^2) generalized).**
+____________________________________________________________________________________________________________________________________________________________________
+# 5.LeetCode - Rotate Image
+
+## Problem Statement
+You are given an `n x n` 2D matrix representing an image, where each element in the matrix is a pixel value. Rotate the image by **90 degrees (clockwise)** in-place.
+## Approach
+We can solve this problem in **two main steps**:
+
+### 1. **Transpose the matrix**
+- Swap `matrix[i][j]` with `matrix[j][i]` for all `i < j`.
+- This flips the matrix over its diagonal.
+
+### 2. **Reverse each row**
+- For each row, reverse the elements in-place.
+- This achieves the 90° clockwise rotation.
+
+### Complexity Analysis
+- Time Complexity:
+
+- Transpose: O(n^2)
+
+- Row reversal: O(n^2)
+
+- **Total: O(n^2)**
+
+- Space Complexity:
+
+- **In-place rotation, so O(1) extra space.**

@@ -16,7 +16,7 @@ Given an integer array `nums`, return `true` if any value appears at least twice
 - **Approach:** Use a HashSet to track seen elements and detect duplicates quickly.
 
 
-_______________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________
 
 2.Longest Subarray with Sum K
 ###Problem:
@@ -47,7 +47,7 @@ ________________________________________________________________________________
   - Array contains negative numbers.
   - Multiple subarrays with the same target sum.
   - Entire array itself equals k.
-_______________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________
 3. Spiral Matrix Traversal
 
 ### Problem Statement
@@ -66,3 +66,20 @@ Use four boundary pointers (`top`, `bottom`, `left`, `right`) to simulate the sp
 
 - **O(1)** (excluding the result list).
 
+____________________________________________________________________________________________________________________________________________________________________
+# Valid Sudoku — Java Solution
+Problem Statement:  
+Determine if a given  **9×9 Sudoku board**  is valid.  
+Only the  **filled cells**  need to be validated according to the rules:
+
+i.Each row must contain the digits  `1-9`  without repetition.
+
+ii.Each column must contain the digits  `1-9`  without repetition.
+
+iii.Each of the nine  **3×3 sub-boxes**  of the grid must contain the digits  `1-9`  without repetition.
+
+The Sudoku board  **may be partially filled**, where empty cells are represented by  `'.'`.
+
+Time Complexity: We check each of the 81 cells once → **O(9×9) = O(1) (constant for fixed 9×9 board, or **O(n^2)** generalized).**
+
+Space Complexity: **Three 9×9 arrays → O(1) constant space (or O(n^2) generalized).**

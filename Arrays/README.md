@@ -3,13 +3,13 @@
 Problem
 Given an integer array `nums`, return `true` if any value appears at least twice in the array, and `false` if every element is distinct.
 Solutions
-
- ##Method 1: Sorting
+ 
+ Method 1: Sorting
 - **Time Complexity:** O(n log n)
 - **Space Complexity:** O(1)
 - **Approach:** Sort the array and check for adjacent duplicates.
 
-##Method 2: HashSet
+ Method 2: HashSet
 - **Time Complexity:** O(n)
 - **Space Complexity:** O(n)
 - **Approach:** Use a HashSet to track seen elements and detect duplicates quickly.
@@ -17,16 +17,16 @@ Solutions
 
 ____________________________________________________________________________________________________________________________________________________________________
 
-#2.Longest Subarray with Sum K
-###Problem:
+# 2.Longest Subarray with Sum K
+Problem:
   Given an array of integers and a target sum 'k', find the length of the longest contiguous subarray
   that adds up exactly to 'k'.
   
-  ###Approach:
+  Approach:
   This solution uses the prefix sum technique along with a HashMap to store the first occurrence
   of each prefix sum value.
   
-  ###Steps:
+  Steps:
   1. Initialize a running sum = 0 and ans = 0.
   2. Traverse the array:
    - Add current element to sum.
@@ -35,33 +35,33 @@ ________________________________________________________________________________
    - Update ans to the maximum of current ans and the subarray length.
    - Store the sum in the HashMap if it's not already there to preserve the earliest index.
   
-  ###Why This Works:
+  Why This Works:
   By using the prefix sum concept, we reduce the problem of checking all subarrays to a 
   constant-time lookup using a HashMap. This reduces time complexity from O(n^2) to O(n).
   
-  ###Time Complexity: O(n) - Single pass through the array.
-  ###Space Complexity: O(n) - For storing prefix sums in the HashMap.
+  Time Complexity: O(n) - Single pass through the array.
+  Space Complexity: O(n) - For storing prefix sums in the HashMap.
  
-  ###Edge Cases Handled:
+  Edge Cases Handled:
   - Array contains negative numbers.
   - Multiple subarrays with the same target sum.
   - Entire array itself equals k.
 ____________________________________________________________________________________________________________________________________________________________________
-#3. Spiral Matrix Traversal
+# 3. Spiral Matrix Traversal
 
-### Problem Statement
+Problem Statement
 
 Given a 2D matrix `mat`, return all elements in **spiral order** (clockwise starting from the top-left).
 
-### Approach
+ Approach
 
 Use four boundary pointers (`top`, `bottom`, `left`, `right`) to simulate the spiral traversal of the matrix. Move in a loop through the boundaries, adding elements to the result list in spiral order, and update the boundaries after each traversal.
 
-### Time Complexity
+ Time Complexity
 
 - **O(m × n)**, where `m` is the number of rows and `n` is the number of columns.
 
-### Space Complexity
+ Space Complexity
 
 - **O(1)** (excluding the result list).
 

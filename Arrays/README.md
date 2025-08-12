@@ -1,16 +1,15 @@
-1. Contains Duplicate Leet Code 217
+# Contains Duplicate Leet Code 217
 
-### Problem
+Problem
 Given an integer array `nums`, return `true` if any value appears at least twice in the array, and `false` if every element is distinct.
+Solutions
 
-### Solutions
-
-#### Method 1: Sorting
+ ##Method 1: Sorting
 - **Time Complexity:** O(n log n)
 - **Space Complexity:** O(1)
 - **Approach:** Sort the array and check for adjacent duplicates.
 
-#### Method 2: HashSet
+##Method 2: HashSet
 - **Time Complexity:** O(n)
 - **Space Complexity:** O(n)
 - **Approach:** Use a HashSet to track seen elements and detect duplicates quickly.
@@ -18,7 +17,7 @@ Given an integer array `nums`, return `true` if any value appears at least twice
 
 ____________________________________________________________________________________________________________________________________________________________________
 
-2.Longest Subarray with Sum K
+#2.Longest Subarray with Sum K
 ###Problem:
   Given an array of integers and a target sum 'k', find the length of the longest contiguous subarray
   that adds up exactly to 'k'.
@@ -48,7 +47,7 @@ ________________________________________________________________________________
   - Multiple subarrays with the same target sum.
   - Entire array itself equals k.
 ____________________________________________________________________________________________________________________________________________________________________
-3. Spiral Matrix Traversal
+#3. Spiral Matrix Traversal
 
 ### Problem Statement
 
@@ -67,7 +66,7 @@ Use four boundary pointers (`top`, `bottom`, `left`, `right`) to simulate the sp
 - **O(1)** (excluding the result list).
 
 ____________________________________________________________________________________________________________________________________________________________________
-# Valid Sudoku — Java Solution
+# 4.Valid Sudoku — Java Solution
 Problem Statement:  
 Determine if a given  **9×9 Sudoku board**  is valid.  
 Only the  **filled cells**  need to be validated according to the rules:

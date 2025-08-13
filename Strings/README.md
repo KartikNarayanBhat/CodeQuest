@@ -21,18 +21,14 @@ Given an array of characters, reverse the array **in-place** (without using extr
 This means you have to modify the input array directly so that its characters are in reverse order.
 
 ##  Approach
-
 1. **Two Pointers Technique**:
    - Use two variables (`left` and `right`) pointing to the start and end of the array.
    - Swap the characters at `left` and `right`.
    - Move `left` forward and `right` backward.
    - Repeat until `left` is no longer less than `right`.
-
 2. **Why This Works**:
    - Each swap brings the characters into their reversed position.
    - Using two pointers ensures the reversal happens in-place, with **O(1)** extra memory.
-
----
 
 ##  Time Complexity
 - **O(n)** — We need to process each character once (or swap each pair once).

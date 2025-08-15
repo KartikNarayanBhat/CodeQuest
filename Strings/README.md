@@ -13,7 +13,7 @@ Explanation: After 2 right rotations, s1 becomes "cdab", which is equal to s2.
 
 # Space Complexity
 - Total Space Complexity: **O(n)**
-______________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________
 # Reverse String
 
 ##  Problem Explanation
@@ -59,4 +59,27 @@ ________________________________________________________________________________
 
 ## Space Complexity
 - **O(1)** — Although we use a `HashMap`, it stores at most 26 lowercase English letters, so space usage is constant.
+____________________________________________________________________________________________________________________________________________________________________
+# String to Integer (atoi)
 
+## Problem Statement
+Implement the `myAtoi(string s)` function, which converts a string to a 32-bit signed integer (similar to the C/C++ `atoi` function). The algorithm should:
+1. Ignore any leading whitespace.
+2. Determine the sign of the number.
+3. Read in digits and stop at the first non-digit character.
+4. Clamp the integer to the 32-bit signed integer range if it overflows:
+   - [-2^31, 2^31 - 1]
+5. Return the final integer.
+
+## Approach
+1. **Ignore Leading Spaces** – Iterate through the string until a non-space character is found.
+2. **Determine Sign** – Check if the next character is `+` or `-` to set the sign.
+3. **Convert Digits** – Parse each digit and build the integer value.
+4. **Overflow Handling** – Before adding a new digit, check if adding it would cause overflow. If so, return the clamped limit (`Integer.MAX_VALUE` or `Integer.MIN_VALUE`).
+5. **Return Result** – Multiply the number by its sign and return it.
+
+## Time Complexity
+**O(n)** — where `n` is the length of the string, since we scan each character at most once.
+
+## Space Complexity
+**O(1)** — only a few integer variables are used regardless of input size.

@@ -7,11 +7,11 @@ Note: A string is a rotation of another if it can be formed by moving characters
 Output: **true**
 Explanation: After 2 right rotations, s1 becomes "cdab", which is equal to s2.
 
-# Time Complexity
+## Time Complexity
 - Worst-case Time Complexity: **O(n²)**
 - Average-case Time Complexity: **Close to O(n)**
 
-# Space Complexity
+## Space Complexity
 - Total Space Complexity: **O(n)**
 ____________________________________________________________________________________________________________________________________________________________________
 # Reverse String
@@ -83,3 +83,25 @@ Implement the `myAtoi(string s)` function, which converts a string to a 32-bit s
 
 ## Space Complexity
 **O(1)** — only a few integer variables are used regardless of input size.
+____________________________________________________________________________________________________________________________________________________________________
+# Find the Index of First Occurrence in String
+
+## Problem Statement
+Given two strings `haystack` and `needle`, return the index of the first occurrence of `needle` in `haystack`. If `needle` is not part of `haystack`, return `-1`.
+## Approach
+We can solve this problem using the **sliding window / substring comparison** technique:
+
+1. Let the length of `haystack` be `n` and the length of `needle` be `m`.
+2. Iterate through `haystack` from index `0` to `n - m`.
+3. At each step, check if the substring of length `m` starting at the current index matches `needle`.
+4. If a match is found, return the current index.
+5. If no match is found after traversing the string, return `-1`.
+6. 
+This approach ensures that we only compare substrings of the exact length of `needle`.
+
+## Time Complexity
+- **O(n * m)** in the worst case, where `n` is the length of `haystack` and `m` is the length of `needle`.  
+  Each possible starting position (up to `n - m`) may require up to `m` character comparisons.
+
+## Space Complexity
+- **O(1)**, as we only use a few variables for iteration and comparisons without extra data structures.

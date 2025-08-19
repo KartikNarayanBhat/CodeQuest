@@ -83,7 +83,7 @@ Implement the `myAtoi(string s)` function, which converts a string to a 32-bit s
 
 ## Space Complexity
 **O(1)** — only a few integer variables are used regardless of input size.
-____________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________________________________
 # Find the Index of First Occurrence in String
 
 ## Problem Statement
@@ -105,3 +105,30 @@ This approach ensures that we only compare substrings of the exact length of `ne
 
 ## Space Complexity
 - **O(1)**, as we only use a few variables for iteration and comparisons without extra data structures.
+___________________________________________________________________________________________________________________________________________________________________
+# Longest Palindromic Substring
+
+## Problem Statement
+Given a string `s`, return the longest palindromic substring in `s`.
+
+A palindrome is a string that reads the same backward as forward.
+
+---
+
+## Approach
+- Use the **Expand Around Center** technique.  
+- A palindrome can have:
+  - **Odd length** → center at one character.  
+  - **Even length** → center between two characters.  
+- For each index in the string:
+  - Expand outward from the center for both odd and even cases.  
+  - Keep track of the longest palindrome found.  
+- Return the substring defined by the updated start and end indices.
+
+---
+
+## Time Complexity
+- **O(n²)** → For each character, expanding around the center can take up to `O(n)`.  
+
+## Space Complexity
+- **O(1)** → Only a few integer variables are used.

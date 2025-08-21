@@ -110,3 +110,59 @@ We can solve this problem in **two main steps**:
 - Space Complexity:
 
 - **In-place rotation, so O(1) extra space.**
+  ---
+# Can Place Flowers
+
+## Problem Statement
+You are given an array `flowerbed` consisting of `0`s and `1`s, where `0` means empty and `1` means not empty (a flower is already planted).  
+You are also given an integer `n`.  
+
+Return `true` if `n` new flowers can be planted in the flowerbed without violating the rule that no two flowers can be adjacent, otherwise return `false`.
+
+---
+
+## Approach
+1. Iterate through the `flowerbed` array.  
+2. At each position `i`:
+   - If the current spot is `0`, check if both its left and right neighbors are empty (or out of bounds).  
+   - If both neighbors are empty, plant a flower (`flowerbed[i] = 1`) and increment `planted`.  
+3. After processing, compare `planted` with `n`.  
+   - If `planted >= n`, return `true`.  
+   - Otherwise, return `false`.  
+
+---
+
+## Time Complexity
+- **O(n)** → One pass through the flowerbed.  
+
+## Space Complexity
+- **O(1)** → Only a few extra variables are used (`planted`, `left`, `right`).  
+---
+# Kids With the Greatest Number of Candies
+
+## Problem Statement
+You are given an integer array `candies` where `candies[i]` represents the number of candies the **i-th kid** has.  
+You are also given an integer `extraCandies`.  
+
+For each kid, check if after giving them all the `extraCandies`, they will have the **greatest number of candies among all kids**.  
+Return a list of booleans where `result[i] = true` if the i-th kid can have the greatest number of candies, otherwise `false`.
+
+---
+
+## Approach
+1. Find the maximum value in the `candies` array (the current greatest number of candies).  
+2. For each kid, add `extraCandies` to their candies count.  
+3. If this value is greater than or equal to `maxCandies`, mark it as `true`, otherwise `false`.  
+4. Store results in a list and return it.  
+
+This approach avoids checking against every kid repeatedly, reducing time complexity.
+
+---
+
+## Time Complexity
+- **O(n)** → One pass to find the maximum, and one pass to build the result.  
+
+## Space Complexity
+- **O(n)** → To store the result list.  
+- Only a few extra variables are used (`max`), so extra space is constant apart from the output list.  
+---

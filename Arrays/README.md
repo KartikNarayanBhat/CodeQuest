@@ -196,3 +196,39 @@ The solution handles the problem in three cases:
 ## Space Complexity
 - **O(1)** → No extra space used apart from the output array (in-place modification).
   ---
+  # Increasing Triplet Subsequence
+
+## Problem Statement
+Given an integer array `nums`, return `true` if there exists a triple of indices `(i, j, k)` such that:
+- `i < j < k`
+- `nums[i] < nums[j] < nums[k]`
+
+Otherwise, return `false`.
+
+---
+
+## Approach
+The algorithm uses a greedy strategy with two markers:
+
+1. Maintain two variables:
+   - `first` → the smallest element seen so far.
+   - `second` → the second smallest element seen so far.
+
+2. Iterate through the array:
+   - If the current element is **less than or equal to `first`**, update `first`.
+   - Else if the current element is **less than or equal to `second`**, update `second`.
+   - Otherwise, if the element is greater than both, we have found a valid triplet and return `true`.
+
+3. If the loop finishes without finding such a sequence, return `false`.
+
+This works because we always try to keep the smallest possible candidates for the first two elements of the triplet.  
+The moment we encounter a number larger than both, we’ve found an increasing triplet subsequence.
+
+---
+
+## Time Complexity
+- **O(n)** → The array is traversed once.
+
+## Space Complexity
+- **O(1)** → Only constant extra space is used.
+---

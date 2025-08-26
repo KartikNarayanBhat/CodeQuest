@@ -1,0 +1,25 @@
+class Solution {
+    int count=0;
+    int max=0;
+    public boolean isVovel(char c){
+        return "aeiou".indexOf(c)!=-1;
+    }
+    public int maxVowels(String s, int k) {
+        for(int i=0;i<k;i++){
+            if(isVovel(s.charAt(i))){
+                count++;
+            }
+        }
+        max=count;
+        for(int i=k;i<s.length();i++){
+            if(isVovel(s.charAt(i-k))){
+                count--;
+            }
+            if(isVovel(s.charAt(i))){
+                count++;
+            }
+       max=Math.max(max,count);
+        }
+        return max;
+    }
+}

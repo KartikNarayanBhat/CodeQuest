@@ -57,4 +57,34 @@ Return the head of the modified linked list.
 
 
 This is achieved in O(n) time and O(1) extra space.
-______________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________
+# Reverse Linked List II
+
+## Problem Statement
+Given the `head` of a singly linked list and two integers `left` and `right` where `left <= right`,  
+reverse the nodes of the list from position `left` to position `right`, and return the modified list.  
+
+- Positions are **1-indexed**.  
+- The reversal must be done **in-place** without creating new nodes.  
+
+---
+
+## Approach
+1. Traverse the list until reaching the node at position `left`.  
+   - Keep track of the node before it (`connection_node`) and the current node at `left` (`tail`).  
+2. Reverse the sublist between `left` and `right` using the standard linked list reversal method.  
+   - Update pointers (`prev`, `current_node`, `next_node`) for `n = right - left + 1` steps.  
+3. Reconnect the reversed sublist back into the original list:  
+   - If `connection_node` exists, connect it to the new head of the reversed sublist (`prev`).  
+   - Otherwise, update `head` to `prev`.  
+   - Connect the tail of the reversed sublist (`tail`) to the remaining part (`current_node`).  
+4. Return the new `head`.  
+
+---
+
+##  Time Complexity
+- **O(n)** → Single traversal of the linked list.  
+
+##  Space Complexity
+- **O(1)** → Only a few pointer variables are used; no extra data structures.  
+

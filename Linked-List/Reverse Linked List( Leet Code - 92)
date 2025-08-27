@@ -1,0 +1,33 @@
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        int m=left;
+        int n=right;
+        if(head==null){
+            return null;
+        }
+        ListNode prev=null;
+        ListNode current_node=head;
+        while(m>1){
+            prev=current_node;
+            current_node=current_node.next;
+            m--;
+            n--;
+        }
+        ListNode connection_node=prev;
+        ListNode tail=current_node;
+        while(n>0){
+            ListNode next_node = current_node.next;
+            current_node.next=prev;
+            prev=current_node;
+            current_node=next_node;
+            n--;
+        }
+        if(connection_node!=null){
+            connection_node.next=prev;
+        }else{
+            head=prev;
+        }
+        tail.next=current_node;
+        return head;
+    }
+}

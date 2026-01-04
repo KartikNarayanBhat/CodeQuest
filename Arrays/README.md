@@ -232,3 +232,56 @@ The moment we encounter a number larger than both, we’ve found an increasing t
 ## Space Complexity
 - **O(1)** → Only constant extra space is used.
 ---
+## Problem Statement
+
+Given an integer array `nums`, return the **sum of divisors** of all numbers that have **exactly four distinct divisors**.
+
+For each number in the array:
+- Find all of its positive divisors.
+- If a number has exactly **4 divisors**, add the sum of those divisors to the result.
+- Ignore numbers that do not satisfy this condition.
+
+Return the final accumulated sum.
+
+---
+
+## Approach
+
+The algorithm checks each number individually and counts its divisors efficiently.
+
+1. Initialize a variable `total` to store the final sum.
+2. For each number `x` in the array:
+   - Initialize `count = 0` to track the number of divisors.
+   - Initialize `sum = 0` to store the sum of divisors.
+3. Iterate from `1` to `√x`:
+   - If `i` divides `x`, then both `i` and `x / i` are divisors.
+   - Add them to `sum` and increment `count` accordingly.
+   - If `count` exceeds `4`, break early to save time.
+4. After checking all possible divisors:
+   - If `count == 4`, add `sum` to `total`.
+5. Return `total` after processing all elements.
+
+This approach leverages the fact that divisors come in pairs and avoids unnecessary checks.
+
+---
+
+## Time Complexity
+
+- Each number is processed up to `√x`.
+- **Time Complexity:**
+- O(n · √m)
+
+where:
+- `n` = number of elements in the array  
+- `m` = maximum value in the array
+
+---
+
+## Space Complexity
+
+- Only a few integer variables are used.
+- **Space Complexity:**
+- O(1)
+---
+
+
